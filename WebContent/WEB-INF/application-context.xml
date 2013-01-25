@@ -48,7 +48,7 @@
 	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
 		<property name="cacheManager">
 			<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-				<property name="configLocation" value="/WEB-INF/spring/ehcache.xml"></property>
+				<property name="configLocation" value="/WEB-INF/ehcache.xml"></property>
 			</bean>
 		</property>
 	</bean>
@@ -90,7 +90,7 @@
 	<!-- dataSource -->
 	<!-- http://www.mchange.com/projects/c3p0/index.html -->
 	<!-- ============================================================= -->
-<!-- 	<beans profile="dev, real"> -->
+	<beans profile="dev, real">
 		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 			<property name="driverClass" value="#{appConfig['jdbc.driver']}" />
 			<property name="jdbcUrl" value="#{appConfig['jdbc.url']}" />
@@ -103,15 +103,15 @@
 			<property name="maxIdleTime" value="300" />
 			<property name="idleConnectionTestPeriod" value="30" />
 		</bean>
-<!-- 	</beans> -->
+	</beans>
 
 	<!-- ============================================================= -->
 	<!-- embedded database -->
 	<!-- ============================================================= -->
-<!-- 	<beans profile="test"> -->
-<!-- 		<jdbc:embedded-database id="dataSource" type="HSQL"> -->
-<!-- 			<jdbc:script location="/WEB-INF/classes/schema.sql"/> -->
-<!-- 		</jdbc:embedded-database> -->
-<!-- 	</beans> -->
+	<beans profile="test">
+		<jdbc:embedded-database id="dataSource" type="HSQL">
+			<jdbc:script location="/WEB-INF/classes/schema.sql"/>
+		</jdbc:embedded-database>
+	</beans>
 
 </beans>
