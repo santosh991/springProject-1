@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>database config</comment>
+	<entry key="jdbc.driver">com.mysql.jdbc.Driver</entry>
+	<entry key="jdbc.url">jdbc:mysql://localhost:3306/spring3</entry>
+	<entry key="jdbc.username">lng1982</entry>
+	<entry key="jdbc.password">1111</entry>
+	<entry key="cron.time">0 5 15 * * *</entry>
+</properties>

@@ -1,0 +1,26 @@
+스프링 3.1 샘플 프로젝트
+
+## 사용법
+
+
+## 주의 사항
+1.
+support 패키지에서는 dao, service, controller 의 패키지 클래스를 호출해서는 안 된다.
+cyclic dependency를 위반하지 않기 위해서
+
+
+
+
+
+
+## 참고 사항
+Domain Model
+domain + DTO
+
+비교적 공통적인 예외처리는 SimpleMappingExceptionResolver 에서 처리하고
+공통적이지 않은 예외처리는 @ExceptionHandler 를 이용해 해당 클래스에서 처리하도록 설정
+
+
+404 익셉션에 대해서는 아직 처리되어 있지 않음. web.xml 에서 할지 말지 결정 필요
+
+400 에러 발생 시 DefaultHandlerExceptionResolver 에서 처리할 수 있는 방안?
