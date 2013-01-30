@@ -81,10 +81,10 @@
 
 	<!-- ============================================================= -->
 	<!-- properties -->
-	<!-- <context:property-placeholder location="classpath:db-config.xml" /> -->
 	<!-- ============================================================= -->
 	<util:properties id="baseConfig" location="classpath:conf/base-config.xml" />
 	<util:properties id="appConfig" location="classpath:conf/${spring.profiles.active}-config.xml" />
+	<context:property-placeholder properties-ref="appConfig" />
 
 	<!-- ============================================================= -->
 	<!-- dataSource -->

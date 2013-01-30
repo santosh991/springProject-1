@@ -10,5 +10,5 @@
 	<entry key="jdbc.password">1111</entry>
 
 	<!-- cron expression config -->
-	<entry key="cron.time">0 5 15 * * *</entry>
+	<entry key="cron.time">0 27 15 * * *</entry>
 </properties>
