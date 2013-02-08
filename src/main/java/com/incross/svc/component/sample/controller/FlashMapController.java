@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.RequestContextUtils;
  * @Project : myProject
  * @Date : 2013. 1. 22.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : 플래쉬맵 테스트
  */
 @Controller
 public class FlashMapController {

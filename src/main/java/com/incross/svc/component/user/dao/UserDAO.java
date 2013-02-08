@@ -3,6 +3,8 @@ package com.incross.svc.component.user.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.incross.svc.component.user.domain.User;
@@ -16,6 +18,9 @@ import com.incross.svc.component.user.domain.User;
  */
 @Repository
 public class UserDAO {
+
+	@Autowired
+	private SqlSession sqlSessionTemplate;
 
 	public UserDAO() {
 		System.out.println("###################################################");
@@ -37,4 +42,10 @@ public class UserDAO {
 		userList.add(user2);
 		return userList;
 	}
+
+	public int insertUser(User user) {
+		return sqlSessionTemplate.insert("users.insertUser", user);
+	}
+
+
 }

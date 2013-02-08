@@ -16,7 +16,7 @@ import com.incross.svc.component.sample.service.EHCacheServlce;
  * @Project : IncrossSpring
  * @Date : 2013. 1. 4.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : ehcache 사용 방법에 대한 샘플
  */
 @Controller
 public class EHCacheController {

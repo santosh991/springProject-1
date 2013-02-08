@@ -2,6 +2,8 @@ package com.incross.svc.common.aop;
 
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StopWatch;
 
 import com.incross.svc.common.annotation.AOP;
@@ -15,6 +17,8 @@ import com.incross.svc.common.annotation.AOP;
  */
 @AOP
 public class LoggingAOP {
+
+	private static Logger log = LoggerFactory.getLogger(LoggingAOP.class);
 
 	public Object aroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
 		String className = pjp.getTarget().getClass().getSimpleName();
@@ -33,7 +37,7 @@ public class LoggingAOP {
 		}
 
 		StopWatch watch = new StopWatch();
-		System.out.println("#IN#[" + className + "." + methodName + "]");
+		log.info("#IN#[" + className + "." + methodName + "]");
 
 		Object obj = null;
 		try {
@@ -41,7 +45,7 @@ public class LoggingAOP {
 			obj = pjp.proceed();
 		} finally {
 			watch.stop();
-			System.out.println("#OUT#[" + className + "." + methodName + "] " + "(" + watch.getTotalTimeMillis() + "ms)");
+			log.info("#OUT#[" + className + "." + methodName + "] " + "(" + watch.getTotalTimeMillis() + "ms)");
 		}
 
 		return obj;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Project : myProject
  * @Date : 2013. 1. 22.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : 리퀘스트 맵핑 테스트 샘플
  */
 @Controller
 public class RequestMappingTestController {

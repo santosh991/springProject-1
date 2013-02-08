@@ -3,10 +3,13 @@ package com.incross.svc.common.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
 
 /**
  * @FileName : UserSecurityInterceptor.java
@@ -16,6 +19,8 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * @프로그램설명 :
  */
 public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
+
+	private static Logger log = LoggerFactory.getLogger(UserSecurityInterceptor.class);
 
 	/**
 	 * <pre>
@@ -30,15 +35,27 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		System.out.println("###############################################################");
+
+		String path = request.getServletPath();
+		String addr = request.getRemoteAddr();
+		String scheme = request.getScheme();
+		log.info("##############################################################################");
+		log.info("## REQUEST=" + scheme + "://" + addr + ", ACTION=" + path + getParameter(request));
+		log.info("##############################################################################");
+
 		HandlerMethod method = (HandlerMethod) handler;
-		System.out.println("getBean() : " + method.getBean());
-		System.out.println("getMethod() : " + method.getMethod());
-		System.out.println("getReturnType() : " + method.getReturnType());
-		System.out.println("getMethodAnnotation() : " + method.getMethodAnnotation(RequestMapping.class));
-		System.out.println("###############################################################");
+		log.info("###############################################################");
+		log.info("getBean() : " + method.getBean());
+		log.info("getMethod() : " + method.getMethod());
+		log.info("getReturnType() : " + method.getReturnType());
+		log.info("getMethodAnnotation() : " + method.getMethodAnnotation(RequestMapping.class));
+		log.info("###############################################################");
 
 		return true;
+	}
+
+	private String getParameter(HttpServletRequest req) {
+		return "파라미터 뽑기";
 	}
 
 	/**
@@ -54,7 +71,7 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-		System.out.println("postHandle!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		log.info("postHandle!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
 
 	/**
@@ -70,6 +87,6 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-		System.out.println("이곳에서 에러 처리를 하자.");
+		log.info("이곳에서 에러 처리를 하자.");
 	}
 }

@@ -240,12 +240,28 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.22</version>
+		</dependency>
 	</dependencies>
 
 	<!-- =================================================== -->
 	<!-- build -->
 	<!-- =================================================== -->
     <build>
+<!--     	<outputDirectory>${web.directory}/WEB-INF/classes</outputDirectory> -->
 <!--     	<finalName>www</finalName> -->
         <plugins>
         	<plugin>
@@ -258,16 +274,16 @@
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.4.1</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${web.directory}/WEB-INF/lib</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${web.directory}/WEB-INF/classes</directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
+<!--                 <configuration> -->
+<!--                     <filesets> -->
+<!--                         <fileset> -->
+<!--                             <directory>${web.directory}/WEB-INF/lib</directory> -->
+<!--                         </fileset> -->
+<!--                         <fileset> -->
+<!--                             <directory>${web.directory}/WEB-INF/classes</directory> -->
+<!--                         </fileset> -->
+<!--                     </filesets> -->
+<!--                 </configuration> -->
             </plugin>
         	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

@@ -1,6 +1,14 @@
 package com.incross.svc.component.user.service;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.incross.svc.component.user.domain.User;
 
 
 /**
@@ -10,14 +18,21 @@ import org.junit.Test;
  * @작성자 : 이남규
  * @프로그램설명 :
  */
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration("application-context.xml")
-//@ActiveProfiles("dev")
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"/test-application-context.xml"})
+@ActiveProfiles("dev")
 public class UserServiceTest {
 
+	@Autowired
+	private UserService userService;
 
-	@Test
-	public void postConstructTest() {
+	@Test(expected = DuplicateKeyException.class)
+	public void 트랜잭션AOP테스트() {
+		User user = new User();
+		user.setUserId("lng1982");
+		user.setUserName("이남규");
+		user.setPassword("1111");
 
+		userService.insertUser(user);
 	}
 }

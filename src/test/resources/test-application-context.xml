@@ -41,19 +41,6 @@
 	</bean>
 
 	<!-- ============================================================= -->
-	<!-- ehcache -->
-	<!-- ============================================================= -->
-	<cache:annotation-driven cache-manager="cacheManager" />
-
-	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-		<property name="cacheManager">
-			<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-				<property name="configLocation" value="/WEB-INF/ehcache.xml"></property>
-			</bean>
-		</property>
-	</bean>
-
-	<!-- ============================================================= -->
 	<!-- AOP -->
 	<!-- ============================================================= -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -96,7 +83,7 @@
 	<!-- properties -->
 	<!-- ============================================================= -->
 	<util:properties id="baseConfig" location="classpath:conf/base-config.xml" />
-	<util:properties id="appConfig" location="classpath:conf/${spring.profiles.active}-config.xml" />
+	<util:properties id="appConfig" location="classpath:conf/dev-config.xml" />
 	<context:property-placeholder properties-ref="appConfig" />
 
 	<!-- ============================================================= -->
@@ -123,7 +110,7 @@
 	<!-- ============================================================= -->
 	<beans profile="test">
 		<jdbc:embedded-database id="dataSource" type="HSQL">
-			<jdbc:script location="/WEB-INF/classes/schema.sql"/>
+			<jdbc:script location="classpath:schema.sql"/>
 		</jdbc:embedded-database>
 	</beans>
 

@@ -24,3 +24,7 @@ domain + DTO
 404 익셉션에 대해서는 아직 처리되어 있지 않음. web.xml 에서 할지 말지 결정 필요
 
 400 에러 발생 시 DefaultHandlerExceptionResolver 에서 처리할 수 있는 방안?
+
+
+sh 디렉토리에 서버에 등록되는 모든 shell을 관리하도록 한다.
+그럼 배포는 어떻게 해야 할까?

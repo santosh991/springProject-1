@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Project : IncrossSpring
  * @Date : 2012. 12. 4.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : 다이나믹 타일즈에서 definition 변경 방법 샘플 코드
  */
 @Controller
 public class DynamicTilesController {

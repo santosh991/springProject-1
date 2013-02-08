@@ -50,7 +50,7 @@ public class UserController {
 		model.addAttribute(userList);
 		user.setUserId("lng1982");
 
-		log.debug("test");
+		log.debug("test22222222222222222233");
 		return "userList";
 	}
 
@@ -65,7 +65,7 @@ public class UserController {
 
 	@RequestMapping(value = "/regist", method = RequestMethod.GET)
 	public String regist(@ModelAttribute User user, HttpSession session, Model model) {
-		userService.insertUser();
+		userService.insertUser(user);
 		Future<Boolean> result = userService.sendEmail();
 		session.setAttribute("asyncMsg", result);
 		return "userRegist";

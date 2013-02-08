@@ -21,7 +21,7 @@ import com.incross.svc.component.user.domain.User;
  * @Project : myProject
  * @Date : 2013. 1. 17.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : 프로퍼티 테스트 샘플
  */
 @Controller
 public class PropertyController {

@@ -5,9 +5,9 @@
 
 	<!-- dataSource config -->
 	<entry key="jdbc.driver">com.mysql.jdbc.Driver</entry>
-	<entry key="jdbc.url">jdbc:mysql://localhost:3306/spring3</entry>
-	<entry key="jdbc.username">lng1982</entry>
-	<entry key="jdbc.password">1111</entry>
+	<entry key="jdbc.url">jdbc:mysql://localhost:3306/springbook</entry>
+	<entry key="jdbc.username">root</entry>
+	<entry key="jdbc.password">rbdn2001</entry>
 
 	<!-- cron expression config -->
 	<entry key="cron.time">0 27 15 * * *</entry>

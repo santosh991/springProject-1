@@ -15,7 +15,7 @@ import com.incross.svc.component.user.domain.User;
  * @Project : myProject
  * @Date : 2013. 1. 24.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : message 프로퍼티, Validator 사용 방법에 대한 샘플 코드
  */
 @Controller
 public class BindingResultTestController {

@@ -41,8 +41,12 @@ public class UserService {
 		return userDAO.getUserList();
 	}
 
-	public void insertUser() {
-		System.out.println("회원 가입 진행!!");
+	public void insertUser(User user) {
+		int cnt = userDAO.insertUser(user);
+		System.out.println(cnt);
+
+		int cnt1 = userDAO.insertUser(user);
+		System.out.println(cnt1);
 	}
 
 	@Async

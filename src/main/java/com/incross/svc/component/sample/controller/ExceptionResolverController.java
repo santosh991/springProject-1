@@ -19,7 +19,7 @@ import com.incross.svc.common.exception.BusinessLogicException;
  * @Project : IncrossSpring
  * @Date : 2012. 12. 5.
  * @작성자 : 이남규
- * @프로그램설명 :
+ * @프로그램설명 : 에러 테스트
  */
 @Controller
 @RequestMapping("/exception")
