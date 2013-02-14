@@ -49,6 +49,10 @@ public class UserService {
 		System.out.println(cnt1);
 	}
 
+	public int insertUser1(User user) {
+		return userDAO.insertUser(user);
+	}
+
 	@Async
 	public Future<Boolean> sendEmail() {
 		try {
