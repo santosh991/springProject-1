@@ -39,7 +39,7 @@ public class UserServiceTest {
 		userService.insertUser(user);
 	}
 
-	@Test
+	@Test(expected = DuplicateKeyException.class)
 	public void 특수문자엔터입력확인테스트() {
 		User user = new User();
 		user.setUserId("lng1983\n");

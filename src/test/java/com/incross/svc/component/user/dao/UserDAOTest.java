@@ -35,7 +35,6 @@ public class UserDAOTest extends SqlSessionDaoSupport {
 	private SqlSession sqlSessionTemplate;
 
 	@Test
-	@Rollback(value = false)
 	public void 저장테스트() {
 		User user = new User();
 		user.setUserId("lng1982");

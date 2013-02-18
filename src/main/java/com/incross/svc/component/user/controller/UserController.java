@@ -50,7 +50,7 @@ public class UserController {
 		model.addAttribute(userList);
 		user.setUserId("lng1982");
 
-		log.debug("test22222222222222222233");
+		log.debug("test55555555555555555");
 		return "userList";
 	}
 
