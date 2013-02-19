@@ -88,7 +88,6 @@
 
 	<!-- ============================================================= -->
 	<!-- dataSource -->
-	<!-- http://www.mchange.com/projects/c3p0/index.html -->
 	<!-- ============================================================= -->
 	<beans profile="dev, real">
 		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">

@@ -274,16 +274,16 @@
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.4.1</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${web.directory}/WEB-INF/lib</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${web.directory}/WEB-INF/classes</directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
+<!--                 <configuration> -->
+<!--                     <filesets> -->
+<!--                         <fileset> -->
+<!--                             <directory>${web.directory}/WEB-INF/lib</directory> -->
+<!--                         </fileset> -->
+<!--                         <fileset> -->
+<!--                             <directory>${web.directory}/WEB-INF/classes</directory> -->
+<!--                         </fileset> -->
+<!--                     </filesets> -->
+<!--                 </configuration> -->
             </plugin>
         	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
