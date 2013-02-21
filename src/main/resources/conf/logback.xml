@@ -14,16 +14,23 @@
 		</rollingPolicy>
 
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+			<Pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</Pattern>
 		</layout>
 	</appender>
 
-	<logger name="com.incross.svc" level="DEBUG"/>
-    <logger name="org.springframework" level="DEBUG"/>
-    <logger name="org.springframework.security" level="DEBUG"/>
-    <logger name="java.sql" level="DEBUG"/>
+	<logger name="com.incross.svc" level="DEBUG" />
 
-	<root level="INFO">
+    <logger name="org.springframework" level="DEBUG" />
+
+<!--     <logger name="org.springframework.security" level="DEBUG"> -->
+<!-- 		<appender-ref ref="FILE" /> -->
+<!--     </logger> -->
+
+<!--     <logger name="java.sql" level="DEBUG"> -->
+<!-- 		<appender-ref ref="FILE" /> -->
+<!--     </logger> -->
+
+	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
 	</root>

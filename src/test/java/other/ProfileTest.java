@@ -1,4 +1,4 @@
-package profile;
+package other;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;

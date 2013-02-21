@@ -1,5 +1,7 @@
 package com.incross.svc.common.schedule;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import com.incross.svc.common.annotation.Batch;
@@ -14,13 +16,15 @@ import com.incross.svc.common.annotation.Batch;
 @Batch
 public class ScheduleTest {
 
+	private final Logger logger = LoggerFactory.getLogger(ScheduleTest.class);
+
 	@Scheduled(fixedDelay = 60000)
 	public void testSchedule1() {
-		System.out.println("testSchedule1 스케줄 실행");
+		logger.info("testSchedule1 스케줄 실행");
 	}
 
 	@Scheduled(cron = "${cron.time}")
 	public void testSchedule3() {
-		System.out.println("testSchedule3 스케줄 실행합니다.");
+		logger.info("testSchedule3 스케줄 실행합니다.");
 	}
 }

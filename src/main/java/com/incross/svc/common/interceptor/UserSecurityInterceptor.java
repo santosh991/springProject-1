@@ -35,14 +35,6 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-		String path = request.getServletPath();
-		String addr = request.getRemoteAddr();
-		String scheme = request.getScheme();
-		log.info("##############################################################################");
-		log.info("## REQUEST=" + scheme + "://" + addr + ", ACTION=" + path + getParameter(request));
-		log.info("##############################################################################");
-
 		HandlerMethod method = (HandlerMethod) handler;
 		log.info("###############################################################");
 		log.info("getBean() : " + method.getBean());
@@ -50,12 +42,7 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
 		log.info("getReturnType() : " + method.getReturnType());
 		log.info("getMethodAnnotation() : " + method.getMethodAnnotation(RequestMapping.class));
 		log.info("###############################################################");
-
 		return true;
-	}
-
-	private String getParameter(HttpServletRequest req) {
-		return "파라미터 뽑기";
 	}
 
 	/**

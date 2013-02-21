@@ -37,6 +37,10 @@
 	<!-- ============================================================= -->
 	<mvc:interceptors>
 		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.incross.svc.common.interceptor.LogHandlerInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
 			<mvc:mapping path="/user/**" />
 			<bean class="com.incross.svc.common.interceptor.UserSecurityInterceptor" />
 		</mvc:interceptor>
