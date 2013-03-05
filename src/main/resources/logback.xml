@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+	<!-- console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyy-mm-dd HH:mm:ss.SSS} [%thread] [%c] %-5p - %m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/home/hosting_users/lng1982/log/logFile.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/hosting_users/lng1982/log/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+<!-- 			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern> -->
+<!-- 			<Pattern>%d [%thread] %-5level %logger{36} [%file : %line] %msg%n</Pattern> -->
+			<Pattern>%d{ABSOLUTE} %5p %t %c{2}:%L - %m%n</Pattern>
+		</layout>
+
+    </appender>
+
+	<!-- DEBUG > INFO > WARN > ERROR > FATAL -->
+    <logger name="com.incross.svc" level="INFO" />
+    <logger name="org.springframework" level="INFO" />
+    <logger name="java.sql" level="WARN" />
+    <logger name="org.apache" level="WARN" />
+    <logger name="org.mybatis" level="WARN" />
+
+	<root level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

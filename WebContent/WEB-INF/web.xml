@@ -10,7 +10,7 @@
 	<!-- ================================================== -->
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>spring.root</param-value>
+		<param-value>springsample.root</param-value>
 	</context-param>
 
 	<!-- ================================================== -->
