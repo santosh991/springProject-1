@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.incross.svc.component.sample.service.EHCacheServlce;
+import com.incross.svc.component.sample.service.EHCacheService;
 
 /**
  * @FileName : EHCacheController.java
@@ -22,7 +22,7 @@ import com.incross.svc.component.sample.service.EHCacheServlce;
 public class EHCacheController {
 
 	@Autowired
-	private EHCacheServlce ehCacheServlce;
+	private EHCacheService ehCacheServlce;
 
 	@RequestMapping(value = "/ehcache", method = RequestMethod.GET)
 	@ResponseBody

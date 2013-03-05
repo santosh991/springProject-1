@@ -1,5 +1,6 @@
 package com.incross.svc.component.user.service;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -42,11 +43,20 @@ public class UserService {
 	}
 
 	public void insertUser(User user) {
-		int cnt = userDAO.insertUser(user);
-		System.out.println(cnt);
+		userDAO.insertUser(user);
+	}
 
-		int cnt1 = userDAO.insertUser(user);
-		System.out.println(cnt1);
+	public void insertUser(User user, User user1) {
+		userDAO.insertUser(user);
+		userDAO.insertUser(user1);
+
+		try {
+			// checked Exception 강제로 발생
+			throw new FileNotFoundException();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
 	}
 
 	public int insertUser1(User user) {

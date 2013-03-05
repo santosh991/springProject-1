@@ -1,12 +1,8 @@
 package com.incross.svc.component.user.service;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -29,24 +25,19 @@ public class UserServiceTest {
 	@Autowired
 	private UserService userService;
 
-	@Test(expected = DuplicateKeyException.class)
-	public void 트랜잭션AOP테스트() {
+	@Test(expected = RuntimeException.class)
+	public void 트랜잭션롤백테스트_실패case() {
 		User user = new User();
-		user.setUserId("lng1982");
-		user.setUserName("이남규");
+		user.setUserId("abc1111");
 		user.setPassword("1111");
+		user.setUserName("kyu");
 
-		userService.insertUser(user);
+		User user1 = new User();
+		user1.setUserId("abc2222");
+		user1.setPassword("2222");
+		user1.setUserName("kyu");
+
+		userService.insertUser(user, user1);
 	}
 
-	@Test(expected = DuplicateKeyException.class)
-	public void 특수문자엔터입력확인테스트() {
-		User user = new User();
-		user.setUserId("lng1983\n");
-		user.setUserName("이남규");
-		user.setPassword("2222");
-
-		int resultCnt = userService.insertUser1(user);
-		assertThat(resultCnt, is(1));
-	}
 }

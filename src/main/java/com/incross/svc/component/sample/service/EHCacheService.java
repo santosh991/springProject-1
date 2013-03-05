@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @프로그램설명 :
  */
 @Service
-public class EHCacheServlce {
+public class EHCacheService {
 
 	/**
 	 * <pre>
