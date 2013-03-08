@@ -74,6 +74,7 @@ body {
 			<li>직업 : 자바 프로그래머</li>
 			<li>직장 : 인크로스(주)</li>
 			<li>학력 : 방송통신대학교 수료</li>
+			<li>경력 : 만 6년</li>
 		</ul>
 		<br />
 		<h2>Career Path</h2>
@@ -81,7 +82,8 @@ body {
 			<li>산림청 숲에On 홈페이지 개발</li>
 			<li>이러닝 시스템 구축</li>
 			<li>SKT 아이토핑 개발</li>
-			<li>모바일 사서함, 퀵 청구서 개발</li>
+			<li>모바일 사서함</li>
+			<li>SKT 퀵 청구서 개발</li>
 			<li>해피포인트 모바일 멤버십 전송 서버 개발</li>
 			<li>SKT T Interactive CMS(통합구성시스템) Client 개발</li>
 			<li>SKT MoA 광고 플랫폼 개발</li>
