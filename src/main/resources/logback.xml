@@ -15,9 +15,9 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <layout class="ch.qos.logback.classic.PatternLayout">
-<!-- 			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern> -->
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
 <!-- 			<Pattern>%d [%thread] %-5level %logger{36} [%file : %line] %msg%n</Pattern> -->
-			<Pattern>%d{ABSOLUTE} %5p %t %c{2}:%L - %m%n</Pattern>
+<!-- 			<Pattern>%d{ABSOLUTE} %5p %t %c{2}:%L - %m%n</Pattern> -->
 		</layout>
 
     </appender>
