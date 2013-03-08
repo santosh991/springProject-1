@@ -27,6 +27,9 @@ public class UserService {
 	@Autowired
 	private UserDAO userDAO;
 
+	@Autowired
+	private UserRegService userRegService;
+
 	public UserService() {
 		System.out.println("###################################################");
 		System.out.println("create bean : " + getClass().getName());
@@ -48,7 +51,9 @@ public class UserService {
 
 	public void insertUser(User user, User user1) {
 		userDAO.insertUser(user);
-		userDAO.insertUser(user1);
+//		userDAO.insertUser(user1);
+//		userRegService.insertUser(user1);
+		insertUser(user1);
 
 		try {
 			// checked Exception 강제로 발생
