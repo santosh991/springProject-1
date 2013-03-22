@@ -21,6 +21,5 @@ public class UserRegService {
 
 	public void insertUser(User user) {
 		userDAO.insertUser(user);
-//		throw new NullPointerException();
 	}
 }

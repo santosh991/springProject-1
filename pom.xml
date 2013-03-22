@@ -266,12 +266,6 @@
 			</exclusions>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>cglib</groupId> -->
-<!-- 			<artifactId>cglib-nodep</artifactId> -->
-<!-- 			<version>2.2.2</version> -->
-<!-- 		</dependency> -->
-
 		<dependency>
 	    	<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
@@ -315,9 +309,8 @@
 	<!-- build -->
 	<!-- =================================================== -->
     <build>
-<!--     	<outputDirectory>${web.directory}/WEB-INF/classes</outputDirectory> -->
-<!--     	<finalName>www</finalName> -->
         <plugins>
+
         	<plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
@@ -325,6 +318,7 @@
                     <warSourceDirectory>${web.directory}</warSourceDirectory>
                 </configuration>
             </plugin>
+
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.4.1</version>
@@ -339,6 +333,7 @@
 <!--                     </filesets> -->
 <!--                 </configuration> -->
             </plugin>
+
         	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -349,6 +344,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -357,6 +353,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>

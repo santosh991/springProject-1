@@ -41,7 +41,7 @@ public class InitServlet extends HttpServlet {
 	@Override
 	public void destroy() {
 		logger.info("===================================================");
-		logger.info("Spring Project Stoped!!");
+		logger.info("Spring Project Stopped!!");
 		logger.info("===================================================");
 	}
 }

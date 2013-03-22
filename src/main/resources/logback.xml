@@ -8,30 +8,44 @@
         </layout>
     </appender>
 
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<!-- Application log -->
+    <appender name="APP_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>/home/hosting_users/lng1982/log/logFile.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>/home/hosting_users/lng1982/log/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
-        <layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
-<!-- 			<Pattern>%d [%thread] %-5level %logger{36} [%file : %line] %msg%n</Pattern> -->
-<!-- 			<Pattern>%d{ABSOLUTE} %5p %t %c{2}:%L - %m%n</Pattern> -->
-		</layout>
-
+		<encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
     </appender>
 
 	<!-- DEBUG > INFO > WARN > ERROR > FATAL -->
-    <logger name="com.incross.svc" level="INFO" />
-    <logger name="org.springframework" level="INFO" />
-    <logger name="java.sql" level="WARN" />
-    <logger name="org.apache" level="WARN" />
-    <logger name="org.mybatis" level="WARN" />
+<!--     <logger name="com.incross.svc" level="INFO" additivity="false"> -->
+<!-- 		<appender-ref ref="APP_FILE" /> -->
+<!--     </logger> -->
 
-	<root level="DEBUG">
-		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="FILE" />
+<!--     <logger name="org.springframework"> -->
+<!--     	<level value="INFO" /> -->
+<!-- 		<appender-ref ref="APP_FILE" /> -->
+<!--     </logger> -->
+
+<!--     <logger name="java.sql" level="DEBUG" additivity="false"> -->
+<!-- 		<appender-ref ref="SQL_FILE" /> -->
+<!--     </logger> -->
+
+<!--     <logger name="org.apache"> -->
+<!--     	<level value="WARN" /> -->
+<!-- 		<appender-ref ref="APP_FILE" /> -->
+<!-- 	</logger> -->
+
+<!--     <logger name="org.mybatis" level="WARN"> -->
+<!--     	<level value="WARN" /> -->
+<!-- 		<appender-ref ref="APP_FILE" /> -->
+<!--     </logger> -->
+
+	<root level="INFO">
+		<appender-ref ref="APP_FILE" />
 	</root>
 
 </configuration>

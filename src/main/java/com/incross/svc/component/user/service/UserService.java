@@ -1,6 +1,5 @@
 package com.incross.svc.component.user.service;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -36,38 +35,60 @@ public class UserService {
 		System.out.println("###################################################");
 	}
 
+	/**
+	 * <pre>
+	 * init
+	 *
+	 * <pre>
+	 */
 	@PostConstruct
 	public void init() {
 		System.out.println("빈 후처리 애노테이션 테스트");
 	}
 
+	/**
+	 * <pre>
+	 * getUserList
+	 *
+	 * <pre>
+	 * @return
+	 */
 	public List<User> getUserList() {
 		return userDAO.getUserList();
 	}
 
+	/**
+	 * <pre>
+	 * insertUser
+	 *
+	 * <pre>
+	 * @param user
+	 */
 	public void insertUser(User user) {
 		userDAO.insertUser(user);
 	}
 
+	/**
+	 * <pre>
+	 * insertUser
+	 *
+	 * <pre>
+	 * @param user
+	 * @param user1
+	 */
 	public void insertUser(User user, User user1) {
 		userDAO.insertUser(user);
-//		userDAO.insertUser(user1);
-//		userRegService.insertUser(user1);
-		insertUser(user1);
-
-		try {
-			// checked Exception 강제로 발생
-			throw new FileNotFoundException();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
+		userDAO.insertUser(user1);
+		userRegService.insertUser(user); // 개체 무결성 제약 조건 위배
 	}
 
-	public int insertUser1(User user) {
-		return userDAO.insertUser(user);
-	}
-
+	/**
+	 * <pre>
+	 * sendEmail
+	 *
+	 * <pre>
+	 * @return
+	 */
 	@Async
 	public Future<Boolean> sendEmail() {
 		try {

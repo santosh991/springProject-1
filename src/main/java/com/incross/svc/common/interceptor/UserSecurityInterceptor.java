@@ -74,6 +74,6 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-		log.info("이곳에서 에러 처리를 하자.");
+		log.info("afterCompletion!!!!!!!!!!!!!!!!!!!!!");
 	}
 }

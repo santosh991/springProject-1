@@ -26,7 +26,7 @@ public class UserServiceTest {
 	private UserService userService;
 
 	@Test(expected = RuntimeException.class)
-	public void 트랜잭션롤백테스트_실패case() {
+	public void 트랜잭션롤백테스트case() {
 		User user = new User();
 		user.setUserId("abc1111");
 		user.setPassword("1111");

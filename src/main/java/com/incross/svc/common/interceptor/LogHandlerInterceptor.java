@@ -57,10 +57,8 @@ public class LogHandlerInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-		System.out.println("######################################################");
-		System.out.println("ex : " + ex);
-//		System.out.println("message : " + ex.getMessage());
-//		System.out.println("toString : " + ex.toString());
-		System.out.println("######################################################");
+		log.info("######################################################");
+		log.info("ex : " + ex);
+		log.info("######################################################");
 	}
 }
